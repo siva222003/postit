@@ -1,0 +1,66 @@
+[tool.poetry]
+name = "core-app-rest-api"
+version = "0.1.0"
+description = ""
+authors = ["kelly <kelvintawiah224@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^5.0.6"
+djangorestframework = "^3.15.1"
+djoser = "^2.2.2"
+python-dotenv = "^1.0.1"
+pillow = "^10.3.0"
+djangorestframework-simplejwt = "^5.3.1"
+django-cors-headers = "^4.3.1"
+django-sendgrid-v5 = "^1.2.3"
+setuptools = "^70.0.0"
+drf-yasg = "^1.21.7"
+django-jazzmin = "^3.0.0"
+python-decouple = "^3.8"
+django-configurations = "^2.5.1"
+drf-spectacular = "^0.27.2"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.1"
+factory-boy = "^3.3.0"
+pytest-django = "^4.8.0"
+pytest-xdist = "^3.6.1"
+pre-commit = "^3.7.1"
+pyproject-flake8 = "^7.0.0"
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "settings"
+testpaths = "tests"
+python_files = "test_*.py"
+
+[tool.ruff]
+line-length = 120
+exclude = [
+    ".venv",
+    "*/migrations/*",
+    "__pycache__",
+    ".ruff_cache",
+    ".pytest_cache",
+]
+
+[tool.ruff.lint]
+fixable = ["ALL"]
+
+[tool.black]
+target-version = ["py312"]
+line-length = 120
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
